@@ -1,0 +1,76 @@
+
+<head>
+
+
+<style>
+
+    .contact-con{
+        margin: 10px 40px;
+    }
+    .contact-form{
+        margin: 4px 0px;
+    }
+    .contact-form input{
+        margin: 10px 0px;
+    }
+    .contact-btn{
+        margin: 4px 0px;
+        padding: 6px 12px;
+        background-color: rgba(135, 207, 235, 0.726);
+        color: white;
+        font-size: 20px;
+        border-radius: 6px;
+        border: none;
+    }
+    #error{
+     margin-top: 5px;
+      height: 3rem;
+      width: 100%;
+      background-color: palevioletred;
+      color: white;
+    }
+
+</style>
+</head>
+{% extends 'genisup/templates/base.html' %}
+
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="contact-con">
+    <h1 class="text-center">Contact Us</h1>
+    <form method="post" action="/contact/">
+    {% csrf_token %}
+        <div class="contact-form"">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+        </div>
+
+        <div class="contact-form">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+        
+        <div class="contact-form">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+        </div>      
+        
+        <div class="contact-form">
+            <label for="desc">Tell me about what you want to contact me for...</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" required></textarea>
+        </div>
+        <button class="contact-btn" type="submit">Submit</button>
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == "success"%}
+        <div class="alert" role="alert" id ="error" >
+            {{message}}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </form>
+
+</div>
+
+{% endblock body %}

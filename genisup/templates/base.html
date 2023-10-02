@@ -1,0 +1,361 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+  *{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.border{
+    border:2px solid transparent;
+    padding : 6px;
+}
+.border:hover{
+    border: 1.5px solid white;
+}
+.nav-container{
+    justify-content: space-between;
+    height:60px;
+    background-color: #0f1111;
+    color: white;
+}
+.nav-search{
+   background-color: pink;
+   width : 550px;
+   height: 40px;
+   border-radius: 3px;
+   justify-content: space-evenly;
+}
+.nav-search input{
+    height: 40px;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    color: #cccccc;
+}
+.search-select {
+    height: 40px;
+    background-color: #f3f3f3;
+    width:50px;
+    text-align: center;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.search-icon{
+    color : black;
+    height: 100%;
+    width: 50px;
+    background-color: rgba(172, 255, 47, 0.767);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.search-icon i {
+    padding : 10px 14px;
+}
+.nav-search:hover{
+    border : 1.5px solid rgba(172, 255, 47, 0.801);
+}
+#menu{
+  display: none;
+}
+#icons{
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 16px;
+}
+
+#icon a{
+    font-size: 20px;
+    color : white;
+}
+#icons a{
+    padding : 8px;
+    border-radius: 50%;
+    color : white;
+}
+#icons a:hover{
+    padding : 8px;
+    border-radius: 50%;
+    color : rgba(172, 255, 47, 0.795);
+    background-color: white;
+}
+
+
+    .first-footer{
+    margin-top: 1rem;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 30px;
+    background-color: #37475a ;
+}
+.first-footer a{
+    color: rgba(172, 255, 47, 0.904);
+    font-size: 0.85rem;
+}
+.second-footer{
+  padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #222f3d;
+    color: rgba(172, 255, 47, 0.904);
+}
+.footer-list{
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.second-footer ul{
+    list-style: none;
+    font-size: 0.65rem;
+}
+.second-footer ul li{
+    cursor: pointer;
+    margin-top: 10px;
+    color: #dddddd; 
+}
+
+.fourth-footer{
+    background-color: #0f1111;
+    color: white;
+    height: 70px;
+    padding-top: 20px; 
+}
+.fourth-footer a{
+    margin-top: 20px;
+    color: rgba(172, 255, 47, 0.863);
+}
+.pages{
+    padding: 10px 0px;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.copyright{
+    padding-top: 10px;
+}
+#list-icons a{
+    font-size: 16px;
+    color: white;
+    margin-right: 14px;
+    margin-top: 12px;
+}
+#list-icons a:hover{
+    color: greenyellow;
+}
+
+/* Responsive  */
+@media (max-width: 1200px){
+  .nav-container{
+    width: 100%;
+  }
+}
+@media (max-width: 1000px ) {
+  .nav-search{
+    width: 400px;
+  }
+}
+@media (max-width: 800px){
+  .nav-search{
+    display: none;
+  }
+  #list-icons a{
+    font-size: 12px;
+ }
+ #icons{
+    font-size: 18px;
+    gap: 12px;
+}
+ #icon a{
+    font-size: 18px;
+    
+}
+#icons a{
+    padding : 4px;
+}
+.search-select{
+  width: 30px;
+}
+.search-icon{
+  width: 30px;
+}
+.search-icon i {
+    padding : 2px 4px;
+}
+
+}
+@media (max-width: 600px){
+  .nav-search{
+    display: none;
+  }
+  .second-footer{
+    padding: 0;
+  }
+}   
+@media (max-width: 500px) {
+  #menu{
+    margin-left: 20px;
+    display: block;
+    cursor: pointer;
+  }
+  #menu a{
+    color: white;
+  }
+  .nav-container ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 60px;
+    left: 0;
+    text-align: center;
+  }
+  #list-icons{
+      height: 0px;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100vw;
+      background-color: white;   
+      color: black;
+      transition: 0.2s;
+      z-index: 1000;
+      overflow: hidden;
+    }
+    #list-icons a{
+      color: black;
+    }
+    .list {
+      display: block;
+      width: fit-content;
+      transition: 0.5s;
+      opacity:  0;
+    }
+    #list-icons.active{
+      height:  150px
+    }
+    #list-icons.active ul{
+      opacity: 1;
+    }
+} 
+
+
+  </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title> {% block title %}{% endblock title %} | Genisup</title>
+  </head>
+  <body>
+    <section>
+        <nav class="flex nav-container">
+              <div id="menu">
+                <a href="#"><i class="fa-solid fa-bars"></i></a>
+              </div>  
+            <div id="list-icons" >
+                <ul class="list flex" >
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about'%}">About</a></li>
+                  <li><a href="{% url 'contact'%}">Contact</a></li>
+                  <li><a href="{% url 'services'%}">Services</a></li>
+                  <li><a href="{% url 'blog' %}">Blogs</a></li>
+                </ul>
+            </div>
+                <div class="nav-search flex">
+                  <input type="search" name="" id="" placeholder=" &nbsp; Search here">
+                  <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+                <div class="flex" id="icons">
+                  <div class="help">
+                    <a href="{% url 'help' %}"><i class="fa-brands fa-hire-a-helper"></i></a>
+                  </div>
+                  <div class="setting">
+                    <a href="#"><i class="fa-solid fa-gear"></i></a>
+                  </div>
+                  <div class="logout">
+                    <a href="{% url 'dologout' %}"><i  class="fa-solid fa-right-from-bracket icon"></i></a>
+                  </div>
+                </div>
+        </nav>
+    </section>
+
+
+
+
+
+
+{% block body %} {% endblock body %}
+
+
+<!-- footer -->
+
+    
+   
+  <footer>
+    <div class="first-footer">
+      <a href="#">Back to top</a>
+    </div>
+    <div class="second-footer">
+      <div class="footer-list">
+        Get to Know Us
+        <ul>
+          <li>Carrers</li>
+          <li>Blogs</li>
+        </ul>
+      </div>
+      <div class="footer-list">
+        Lets Us Help You
+        <ul>
+          <li>Your Account</li>
+          <li>Genisup Assistant</li>
+        </ul>
+      </div>
+      <div class="footer-list">
+        Lets Us Help You
+        <ul>
+          <li>Your Account</li>
+          <li>Genisup Assistant</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fourth-footer">
+      <div class="pages"><a href="#">Lets connect with us </a></div>
+    </div>
+  </footer>
+
+
+  <script>
+    menu = document.getElementById('menu');
+    menu.onclick = function(){
+      list = document.getElementById('list-icons');
+      list.classList.toggle("active");
+    }
+  </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<head>
+
+   <style>
+       *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+       } 
+       .main{
+        width: 100%;
+        height: 500px;
+        box-shadow: 0px 0px 3px grey;
+        position: relative;
+        overflow: hidden;
+       }
+       .slider{
+        width: 100%;
+        height: 100%;
+        display: none;
+        transition: 1s;
+       }
+       button{
+         border: none;
+       }
+       .slide-btn button:hover{
+        background-color: rgba(172, 255, 47, 0.74);
+        border: 0.5px solid grey;
+        border-radius: 6px;
+       }
+       .previous{
+         padding:0 10px;
+        position: absolute;
+        margin-top: -280px;
+        left: 20px;
+       }
+       .previous p{
+         margin-top: 10px;
+         font-size: 30px;
+       }
+       .next p{
+         margin-top: 10px;
+         font-size: 30px;
+       }
+       .next{
+        padding: 0 10px;
+        position: absolute;
+        margin-top: -280px;
+        right: 20px;
+       
+       }
+      .ser-title{
+         margin-top: 240px;
+         color: #777;
+         font-size: 2rem;
+         width: 1200px;
+         margin: 0px auto;
+         text-align: center;
+      }
+      .ser-con{
+         cursor: pointer;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 600px;
+      }
+      .s-card{
+         height: 580px;
+         width: 380px;
+         padding: 20px 35px;
+         border-radius: 10px;
+         background: rgba(221, 160, 221, 0.382);
+         margin:10px;
+         overflow: hidden;
+         position: relative;
+         transition: all 0.3s cubic-bezier(0.02, 0.01,0.47,1);
+      }
+     
+      .s-card h1{
+         margin-top: 20px;
+         text-align: start;
+         color: palevioletred;
+         font-size: 16px;
+      }
+      .s-card s-button{
+            background: #22a6b3;
+            color: #c7ecee;
+            display:inline-block ;
+            border: none;
+            border-radius: 10px;
+            width: 120px;
+            padding: 15px;
+            margin-top: 25px;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 20px;
+      }
+      .s-card a{
+         margin-top: 8px;
+         text-decoration: none;
+         color: white;
+         background-color: rgba(137, 43, 226, 0.705);
+         padding:10px;
+         border-radius: 4px;
+      }
+      .s-card .s-content p{
+         font-size: 16px;
+         color: #535c68;
+         line-height: 20px;
+         text-align: start;
+      }
+      .s-card:hover{
+         color: #fff;
+         border: none;
+         box-shadow: 0 0 10px rgba(0, 0 , 0 , 0.3);
+      }
+      .s-card:before,
+      .s-card:after{
+         content: '';
+         background: #22a6b3;
+         width: 180px;
+         height: 180px;
+         border-radius: 50%;
+         opacity: 0;
+         position: absolute;
+         right: 0;
+         bottom:-80px;
+         z-index: -1;
+         transform: translate(100% , -25%) translate3d(0,0,0);
+         transition: all 0.15s cubic-bezier(0.02 , 0.02 ,  0.47 , 1)
+      }
+
+      @media (max-width: 1200px){
+         .s-card img{
+            width: 400px;
+         }
+         .ser-title{
+            margin-top: 80px;
+            width: 100%;
+         }
+         .s-card{
+            width:  100%;
+            margin: 2% 25%;
+         }
+         .ser-title h1{
+            color: black;
+            font-size: 20px;
+         }
+         .ser-con{
+            margin: 5% 20%;
+            flex-direction: column;
+         }
+      }
+      @media (max-width: 750px){
+         .s-card img{
+            width: 300px;
+         }
+         .ser-con{
+            margin: 5% 10%;
+            flex-direction: column;
+         }
+         .s-card{
+            width:  100%;
+            margin: 5% 10%;
+         }
+
+      }
+      @media (max-width: 500px){
+         .s-card img{
+            width: 250px;
+         }
+      }
+
+
+</style>
+</head>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+ <!-- slider starts -->
+
+<div class="main">
+   <img src="https://genisup.com/public/assets/genisup/instrialsol-480x220.jpg"  class="slider" alt="" width="100%">
+   <img src="https://genisup.com/public/assets/genisup/embedsol-480x220.jpg"  class="slider" alt="" width="100%">
+   <img src="https://genisup.com/public/assets/genisup/soc-480x220.jpg"  class="slider" alt="" width="100%">
+   <video width="100%" controls="controls"  loop class="slider" >
+       <source src="http://media.w3.org/2010/05/sintel/trailer.mp4"  type="video/mp4"/>
+   </video>
+   <video width="100%" controls="controls"loop class="slider" >
+       <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
+   </video>
+</div>
+</div>
+<div class="slide-btn">
+   <button class="previous" onclick="controller(-1)"><p> < </p></button>
+   <button class="next" onclick="controller(+1)"><p> > </p></button>
+</div>
+</div>
+
+<!-- slider ends -->
+
+<!-- home page starts -->
+<div class="ser-title">
+  <h1>Areas of expertise</h1>
+  <div class="ser-con">
+     <div class="s-card">
+        <img src="https://genisup.com/public/assets/genisup/instrialsol-480x220.jpg" alt="" width="300px" height="200px">
+        <h1>Silicon Engineering </h1>
+        <div class="s-content">
+          <p>Foundation IP , Custom SoC, RTL to </p>
+          <p>RTL design and integration </p>
+          <p>Functional Verification</p>
+          <p>Physical design & physical verification</p>
+          <p>Analog and Mixed Signal Circuit</p>
+          <p>Analog layout & IO</p>
+          <p>Std. Cells & Memory design</p>
+          <p style="text-align: center;"><a href="#" class="s-button">Read More</a></p>
+        </div>
+     </div>
+     <div class="s-card">
+      <img src="https://genisup.com/public/assets/genisup/embedsol-480x220.jpg" alt="" width="300px" height="200px">
+        <h1>Embeded Solutions</h1>
+        <div class="s-content">
+              <p>Designing Advanced Embedded Systems</p>
+              <p>Mixed Signal PCB design</p>
+              <p>Hardware design</p>
+              <p>Firmware and Middleware</p>
+              <p>PCB fabrication and Assembly</p>
+              <p>Product Engineering</p>
+              <p>Assembly and Manufacturing Support</p>
+            <p style="text-align: center;"><a href="#" class="s-button">Read More</a></p>
+        </div>
+     </div>
+
+     <div class="s-card">
+        <img src="https://genisup.com/public/assets/genisup/soc-480x220.jpg" alt="" width="300px" height="200px">
+        <h1>Industry 4.0 Solutions</h1>
+        <div class="s-content">
+          <p>Use smart manufacturing technology</p>
+          <p>Assembly Automation with us</p>
+          <p>Industrial IoT</p>
+          <p>Machine Vision</p>
+          <p>Enterprise Application Services</p>
+          <p>Data Analytics and science</p>
+          <p>Next Gen Talent</p>
+            <p style="text-align: center;">
+              <a href="#" class="s-button">Read More</a>
+            </p>
+        </div>
+     </div>
+  </div>
+</div>
+
+<!-- home page ends 
+<!-- script for slider -->
+<script>   
+   var flag= 0 ;
+   function controller(x){
+       flag = flag+x;
+       slideshow(flag);
+   }
+   slideshow(flag);
+   let counter = 0;
+        setInterval(function(){  
+         slideshow(counter);
+         counter++;
+         if(counter > 5){
+            counter = 1;
+         }
+        }, 10000);
+   function slideshow(num){
+       let slides = document.querySelectorAll('.slider');
+
+       if(num == slides.length){
+            flag = 0;
+            num = 0;
+       }
+       if(num < 0){
+           flag = slides.length-1;
+           num = slides.length-1;
+       }
+       for(let y of slides){
+           y.style.display = "none";
+       }
+       slides[num].style.display = "block";}
+   </script>
+
+
+{% endblock body %}

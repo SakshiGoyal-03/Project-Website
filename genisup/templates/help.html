@@ -1,0 +1,125 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .heading{
+         margin-top: 280px;
+         color: #777;
+         font-size: 2rem;
+         width: 1200px;
+         margin: 0px auto;
+         text-align: center;
+         padding-bottom: 4px;
+         text-decoration: underline rgba(137, 43, 226, 0.767) 2.5px;
+        }
+         .help-container{
+         cursor: pointer;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 300px;
+      }
+        .help-card{
+         height: 200px;
+         width: 280px;
+         padding: 20px 35px;
+         border-radius: 20px;
+         background: rgba(220, 220, 220, 0.795);
+         margin:10px;
+         overflow: hidden;
+         position: relative;
+         transition: all 0.3s cubic-bezier(0.02, 0.01,0.47,1);
+         text-align: center;
+      }
+      .help-card i{
+        font-size: 40px;
+        margin: 20px 70px;
+        color: rgba(137, 43, 226, 0.781);
+      }
+      .help-card h3{
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.829);
+      }
+      .help-card p{
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.829);
+      }
+      .second{
+        margin-top: -60px;
+      }
+      .help-card:hover{
+         border: none;
+         box-shadow: 0 0 10px rgba(0, 0 , 0 , 0.3);
+         transform: scaleY(1.1);
+      }
+      @media (max-width: 1200px){
+         .heading{
+            margin-top: 80px;
+            width: 100%;
+         }
+         .help-card{
+            width:  100%;
+            margin: 2% 25%;
+         }
+         .heading{
+            color: black;
+            font-size: 20px;
+         }
+         .help-container{
+            margin: 5% 20%;
+            flex-direction: column;
+         }
+      }
+      @media (max-width: 750px){
+         .help-container{
+            margin: 5% 10%;
+            flex-direction: column;
+         }
+         .help--card{
+            width:  100%;
+            margin: 5% 10%;
+         }
+
+      }
+
+    </style>
+
+
+</head>
+
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<body>
+    <div class="help-page">
+        <h1 class="heading">How can we help you?</h1>
+        <div class="help-container">
+            <div class="help-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>OUR MAIN OFFICE </h3>
+                <p>Bangolore, Karnataka, K-30045</p>
+            </div>
+            <div class="help-card">
+                <i class="fa-solid fa-phone"></i>
+                <h3>PHONE NUMBER </h3>
+                <p>9876543210</p>
+                <p>1245678 (Toll free)</p>
+            </div>
+        </div>
+        <div class="help-container second">
+            <div class="help-card">
+                <i class="fa-solid fa-fax"></i>
+                <h3>FAX</h3>
+                <p>1-234-567-8900</p>
+            </div>
+            <div class="help-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>EMAIL</h3>
+                <p>hello@website.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock body %}
